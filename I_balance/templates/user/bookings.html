@@ -84,7 +84,7 @@
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="">E_shop_user</a>
+          <a class="navbar-brand" href="">ibalancr_user</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -121,6 +121,7 @@
                         <div class="quantity-controls d-flex align-items-center">
                             <span class="qty">Qty: {{ i.qty }}</span>
                         </div>
+                        <a href="../cancel_order/{{i.id}}" class="btn btn-sm btn-danger">Cancel order</a>
                     </div>
                 </div>
             </div>

@@ -28,7 +28,7 @@ class Contact(models.Model):
     phone = models.CharField(max_length=15)
     message = models.TextField()
 
-class newarrival(models.Model):
+class classic(models.Model):
     pid=models.TextField()
     name=models.TextField()
     dis=models.TextField()
@@ -36,3 +36,13 @@ class newarrival(models.Model):
     offer_price=models.IntegerField()
     stock=models.IntegerField()
     img=models.FileField()
+
+class sports(models.Model):
+    pid=models.TextField()
+    name=models.TextField()
+    dis=models.TextField()
+    price=models.IntegerField()
+    offer_price=models.IntegerField()
+    stock=models.IntegerField()
+    img=models.FileField()
+

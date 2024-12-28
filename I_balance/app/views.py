@@ -127,9 +127,8 @@ def register(req):
         return render(req,'user/register.html')
     
 
-def newarrival(req):
-    data=newarrival.objects.all()
-    return render(req,'courses.html',{'courses':data})
+def about(req):
+    return render(req,'user/about.html')
     
 def contact(req):
     if req.method == 'POST':
@@ -150,9 +149,9 @@ def contact(req):
                 message=message
             )
             data.save()
-            return render(req, 'contact.html')
+            return render(req, 'user/contact.html')
         except Exception as e:
-            return render(req,'contact.html')
+            return render(req,'user/contact.html')
     
     return render(req,'user/contact.html')
 
@@ -227,3 +226,8 @@ def bookings(req):
     user=User.objects.get(username=req.session['user'])
     buy=Buy.objects.filter(user=user)[::-1]
     return render(req,'user/bookings.html',{'bookings':buy})
+
+def cancel_order(req,pid):
+    data =Buy.objects.get(pk=pid)
+    data.delete()
+    return redirect(bookings)
