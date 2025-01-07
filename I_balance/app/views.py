@@ -54,7 +54,7 @@ def add_product(req):
             data=Product.objects.create(pid=pid,name=name,
                                         dis=dis,price=price,
                                         offer_price=off_price,
-                                        stock=stock,img=file)
+                                        stock=stock,img=file,)
             data.save()
             return redirect(shop_home)
         else:
